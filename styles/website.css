@@ -1,0 +1,382 @@
+/* ═══════════════════════════════════════════════════════════════
+   站点主管：收容协议 — GitBook 官方主题 v2
+   配色对齐游戏 UI：SCP-CN-465 监控中心美学
+   ═══════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans+SC:wght@400;500;600;700&display=swap');
+
+:root {
+  --sd-bg: #070F1A;
+  --sd-bg-elevated: #0A1628;
+  --sd-panel: #0E1C30;
+  --sd-panel-hover: #122438;
+  --sd-border: #1E3A52;
+  --sd-border-glow: #287890;
+  --sd-accent: #3CC8DC;
+  --sd-accent-soft: rgba(60, 200, 220, 0.15);
+  --sd-lcz: #48B976;
+  --sd-lcz-soft: rgba(72, 185, 118, 0.12);
+  --sd-hcz: #CD5555;
+  --sd-hcz-soft: rgba(205, 85, 85, 0.12);
+  --sd-warn: #DCAA37;
+  --sd-warn-soft: rgba(220, 170, 55, 0.12);
+  --sd-admin: #63B3ED;
+  --sd-text: #E8EDF4;
+  --sd-text-secondary: #A8B8CC;
+  --sd-text-muted: #6B7F94;
+  --sd-radius: 8px;
+  --sd-radius-sm: 6px;
+  --sd-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  --sd-font: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+  --sd-mono: 'JetBrains Mono', 'Consolas', monospace;
+}
+
+/* ── 全局 ── */
+body,
+.book-body,
+.page-inner,
+.markdown-section {
+  font-family: var(--sd-font) !important;
+  background-color: var(--sd-bg) !important;
+  color: var(--sd-text) !important;
+  line-height: 1.75 !important;
+}
+
+/* 顶栏扫描线装饰 */
+.book-header {
+  background: linear-gradient(180deg, var(--sd-panel) 0%, var(--sd-bg-elevated) 100%) !important;
+  border-bottom: 1px solid var(--sd-border-glow) !important;
+  box-shadow: var(--sd-shadow) !important;
+}
+
+/* 侧边栏 */
+.book-summary,
+.navigation {
+  background: var(--sd-bg-elevated) !important;
+  border-right: 1px solid var(--sd-border) !important;
+}
+
+.book-summary ul.summary li a,
+.navigation ul.summary li a {
+  color: var(--sd-text-muted) !important;
+  font-size: 0.92em !important;
+  padding: 6px 12px !important;
+  border-radius: var(--sd-radius-sm) !important;
+  transition: all 0.2s ease !important;
+}
+
+.book-summary ul.summary li a:hover {
+  background: var(--sd-accent-soft) !important;
+  color: var(--sd-accent) !important;
+}
+
+.book-summary ul.summary li.active > a,
+.navigation ul.summary li.active > a {
+  color: var(--sd-accent) !important;
+  background: var(--sd-accent-soft) !important;
+  border-left: 3px solid var(--sd-accent) !important;
+  font-weight: 600 !important;
+}
+
+.book-summary ul.summary li ul.summary li a {
+  font-size: 0.85em !important;
+  padding-left: 24px !important;
+}
+
+/* 章节分组标题 */
+.book-summary ul.summary > li > ul > li > a {
+  color: var(--sd-text-secondary) !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* SUMMARY 中「一、二、三…」分组标题 */
+.book-summary ul.summary li.divider,
+.book-summary ul.summary li.section,
+.book-summary ul.summary > li > span,
+.book-summary .summary .divider {
+  color: var(--sd-accent) !important;
+  font-size: 0.78em !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: none !important;
+  padding: 14px 12px 6px !important;
+  margin-top: 8px !important;
+  opacity: 0.95 !important;
+}
+
+/* 页面底部「本章导航」列表 */
+.markdown-section h2 + ul {
+  background: var(--sd-panel) !important;
+  border: 1px solid var(--sd-border-glow) !important;
+  border-radius: var(--sd-radius) !important;
+  padding: 12px 18px !important;
+  margin: 0.5em 0 2em !important;
+  list-style: none !important;
+}
+
+.markdown-section h2 + ul li {
+  margin: 0.35em 0 !important;
+  padding-left: 0 !important;
+}
+
+.markdown-section h2 + ul li a {
+  color: var(--sd-accent) !important;
+  font-weight: 500 !important;
+}
+
+.markdown-section h2 + ul li::marker {
+  content: none !important;
+}
+
+/* 待补图标记 */
+.markdown-section blockquote > p > strong:first-child {
+  color: var(--sd-warn) !important;
+}
+
+/* ── 标题层级 ── */
+.markdown-section h1 {
+  color: var(--sd-accent) !important;
+  font-size: 2em !important;
+  font-weight: 700 !important;
+  border-bottom: 2px solid var(--sd-border-glow) !important;
+  padding-bottom: 0.4em !important;
+  margin-top: 0 !important;
+  letter-spacing: 0.03em !important;
+}
+
+.markdown-section h2 {
+  color: var(--sd-text) !important;
+  font-size: 1.45em !important;
+  font-weight: 600 !important;
+  border-bottom: 1px solid var(--sd-border) !important;
+  padding-bottom: 0.35em !important;
+  margin-top: 2em !important;
+}
+
+.markdown-section h2::before {
+  content: '▸ ';
+  color: var(--sd-accent);
+}
+
+.markdown-section h3 {
+  color: var(--sd-accent) !important;
+  font-size: 1.15em !important;
+  font-weight: 600 !important;
+  border-bottom: none !important;
+  margin-top: 1.5em !important;
+}
+
+.markdown-section h4 {
+  color: var(--sd-text-secondary) !important;
+  font-weight: 600 !important;
+}
+
+/* ── 链接 ── */
+.markdown-section a {
+  color: var(--sd-accent) !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid transparent !important;
+  transition: border-color 0.2s !important;
+}
+
+.markdown-section a:hover {
+  color: #6DD8EC !important;
+  border-bottom-color: var(--sd-accent) !important;
+}
+
+/* ── 引用块（CASSIE 播报风格）── */
+.markdown-section blockquote {
+  background: linear-gradient(135deg, var(--sd-panel) 0%, #0a1a2e 100%) !important;
+  border-left: 4px solid var(--sd-accent) !important;
+  border-radius: 0 var(--sd-radius) var(--sd-radius) 0 !important;
+  padding: 16px 20px !important;
+  color: var(--sd-text-secondary) !important;
+  box-shadow: inset 0 0 20px rgba(60, 200, 220, 0.03) !important;
+  margin: 1.5em 0 !important;
+}
+
+.markdown-section blockquote p {
+  margin: 0 !important;
+}
+
+/* ── 表格 ── */
+.markdown-section table {
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  width: 100% !important;
+  border-radius: var(--sd-radius) !important;
+  overflow: hidden !important;
+  border: 1px solid var(--sd-border) !important;
+  margin: 1.25em 0 !important;
+  box-shadow: var(--sd-shadow) !important;
+}
+
+.markdown-section table th {
+  background: linear-gradient(180deg, #152238 0%, #101c30 100%) !important;
+  color: var(--sd-accent) !important;
+  border: none !important;
+  border-bottom: 1px solid var(--sd-border-glow) !important;
+  padding: 12px 16px !important;
+  font-weight: 600 !important;
+  font-size: 0.9em !important;
+  text-align: left !important;
+}
+
+.markdown-section table td {
+  background: var(--sd-panel) !important;
+  border: none !important;
+  border-bottom: 1px solid #152030 !important;
+  padding: 10px 16px !important;
+  color: var(--sd-text) !important;
+  font-size: 0.92em !important;
+}
+
+.markdown-section table tr:last-child td {
+  border-bottom: none !important;
+}
+
+.markdown-section table tr:nth-child(even) td {
+  background: #0c1828 !important;
+}
+
+.markdown-section table tr:hover td {
+  background: var(--sd-panel-hover) !important;
+}
+
+/* ── 代码 ── */
+.markdown-section code {
+  font-family: var(--sd-mono) !important;
+  background: #081420 !important;
+  border: 1px solid var(--sd-border) !important;
+  border-radius: 4px !important;
+  color: #7DD3E8 !important;
+  padding: 2px 6px !important;
+  font-size: 0.88em !important;
+}
+
+.markdown-section pre {
+  background: #081420 !important;
+  border: 1px solid var(--sd-border-glow) !important;
+  border-radius: var(--sd-radius) !important;
+  padding: 16px 20px !important;
+  box-shadow: var(--sd-shadow) !important;
+  overflow-x: auto !important;
+}
+
+.markdown-section pre code {
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  color: #A8D8EA !important;
+}
+
+/* ── 分隔线 ── */
+.markdown-section hr {
+  border: none !important;
+  height: 1px !important;
+  background: linear-gradient(90deg, transparent, var(--sd-border-glow), transparent) !important;
+  margin: 2.5em 0 !important;
+}
+
+/* ── 图片 ── */
+.markdown-section img {
+  border-radius: var(--sd-radius) !important;
+  border: 1px solid var(--sd-border) !important;
+  box-shadow: var(--sd-shadow) !important;
+  max-width: 100% !important;
+}
+
+/* ── 列表 ── */
+.markdown-section ul,
+.markdown-section ol {
+  padding-left: 1.5em !important;
+}
+
+.markdown-section li {
+  margin: 0.4em 0 !important;
+}
+
+.markdown-section li::marker {
+  color: var(--sd-accent) !important;
+}
+
+/* ── GitBook Hint 提示框 ── */
+.hint,
+.alert {
+  border-radius: var(--sd-radius) !important;
+  border: 1px solid var(--sd-border) !important;
+  padding: 14px 18px !important;
+  margin: 1.25em 0 !important;
+}
+
+.hint.info,
+.alert.info {
+  border-left: 4px solid var(--sd-accent) !important;
+  background: var(--sd-accent-soft) !important;
+}
+
+.hint.warning,
+.alert.warning {
+  border-left: 4px solid var(--sd-warn) !important;
+  background: var(--sd-warn-soft) !important;
+}
+
+.hint.danger,
+.alert.danger {
+  border-left: 4px solid var(--sd-hcz) !important;
+  background: var(--sd-hcz-soft) !important;
+}
+
+.hint.success,
+.alert.success {
+  border-left: 4px solid var(--sd-lcz) !important;
+  background: var(--sd-lcz-soft) !important;
+}
+
+/* ── Mermaid 图表 ── */
+.mermaid {
+  background: var(--sd-panel) !important;
+  border: 1px solid var(--sd-border-glow) !important;
+  border-radius: var(--sd-radius) !important;
+  padding: 20px !important;
+  margin: 1.5em 0 !important;
+  box-shadow: var(--sd-shadow) !important;
+}
+
+/* ── Tabs ── */
+.tabs {
+  border: 1px solid var(--sd-border) !important;
+  border-radius: var(--sd-radius) !important;
+  overflow: hidden !important;
+}
+
+.tabs ul {
+  background: var(--sd-panel) !important;
+  border-bottom: 1px solid var(--sd-border) !important;
+}
+
+.tabs ul li a {
+  color: var(--sd-text-muted) !important;
+}
+
+.tabs ul li.active a {
+  color: var(--sd-accent) !important;
+  border-bottom: 2px solid var(--sd-accent) !important;
+}
+
+/* ── 页脚 ── */
+.page-footer,
+.book-footer {
+  color: var(--sd-text-muted) !important;
+  border-top: 1px solid var(--sd-border) !important;
+}
+
+/* ── 搜索框 ── */
+#book-search-input {
+  background: var(--sd-panel) !important;
+  border: 1px solid var(--sd-border) !important;
+  color: var(--sd-text) !important;
+  border-radius: var(--sd-radius-sm) !important;
+}
