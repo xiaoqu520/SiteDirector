@@ -1,6 +1,6 @@
 ---
 title: Android构建
-description: publish-mobile.ps1
+description: publish.ps1 -Apk
 ---
 # 📱 Android 构建
 
@@ -34,9 +34,11 @@ description: publish-mobile.ps1
 ## 打包命令
 
 ```powershell
-.\publish-mobile.ps1 -Configuration Release -Clean
-.\publish-mobile.ps1 -Configuration Release -Upload
+.\publish.ps1 -Apk
+.\publish.ps1 -Apk -Upload
 ```
+
+`.\publish-mobile.ps1` 为兼容入口，等价于 `.\publish.ps1 -Apk`。
 
 输出：`dist/Android/站点主管-收容协议-v{版本}.apk`  
 清单：`dist/latest-android.json`

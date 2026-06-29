@@ -36,6 +36,7 @@
     * [四侧栏布局与顶栏](04-interface/layout.md)
     * [简报](04-interface/briefing.md)
     * [财政](04-interface/finance.md)
+    * [伦理](04-interface/ethics.md)
     * [建造](04-interface/build.md)
     * [人事](04-interface/personnel.md)
     * [科研](04-interface/research.md)
@@ -56,8 +57,10 @@
     * [物资与后勤](06-economy/logistics.md)
   * [👥 人员管理](06-systems/hubs/人员管理.md)
     * [人员类型与需求](07-personnel/types-needs.md)
+    * [MTF 特遣队培养](07-personnel/mtf-training.md)
     * [手动调度与观察岗](07-personnel/orders-observation.md)
     * [D 级人员与伦理](07-personnel/d-class.md)
+    * [伦理委员会系统](06-systems/ethics-committee.md)
   * [🔬 科研体系](06-systems/hubs/科研体系.md)
     * [科研树与并行槽位](08-research/tech-tree.md)
     * [SCP 专项研究](08-research/scp-research.md)
@@ -98,6 +101,7 @@
 
 * [⌨️ 快捷键一览](appendix/shortcuts.md)
 * [🏢 设施与房间目录](appendix/room-catalog.md)
+* [🗺️ 功能路线图（规划预览）](appendix/feature-roadmap.md)
 * [📜 更新日志](appendix/changelog.md)
 * [📄 许可与致谢](appendix/credits.md)
 

@@ -150,6 +150,7 @@ context.RegisterRoom(new RoomDefinition
 {
     Id = "yourname.custom.lab",       // 全局唯一，勿与内置 ID 冲突
     Name = "异常分析室",
+    Description = "模组自定义科研设施概述，显示于检视面板。",  // 可选
     Category = "科研",                 // 须为建造面板已有分类（见下表）
     DefaultWidth = 2,
     DefaultHeight = 2,
@@ -224,6 +225,7 @@ context.RegisterRoom(new RoomDefinition
 |------|------|
 | `Corridor` | 走廊 |
 | `CompositeCorridor` | 复合通道（可传电） |
+| `NonTraversable` | 不可通行（如电缆通道；传电但不参与人员/SCP 寻路） |
 | `PowerSource` | 发电设施 |
 | `PowerRelay` | 电力中继 |
 | `Containment` | 收容设施 |

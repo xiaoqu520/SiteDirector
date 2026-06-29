@@ -27,7 +27,7 @@ description: +0.1与+0.0.1
 
 ## 当前版本
 
-**v1.6.1**（`Directory.Build.props` 为唯一真源）
+**v1.6.8**（`Directory.Build.props` 为唯一真源；Android 自 v1.6.8 起共用此版本号）
 
 ## GitBook 文档
 
@@ -35,7 +35,7 @@ description: +0.1与+0.0.1
 
 ```yaml
 variables:
-  version: "1.6.1"
+  version: "1.6.8"
 ```
 
 发版后更新该字段并同步 GitBook Space（若开启 Git 同步会自动拉取）。

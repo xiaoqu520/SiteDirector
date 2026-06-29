@@ -25,10 +25,11 @@ description: publish.ps1
 ```
 publish.ps1
 scripts/publish/
-  Common.ps1, Build.ps1, Layout.ps1, Release.ps1
+  Common.ps1, Build.ps1, Layout.ps1, Release.ps1, Mobile.ps1
 tools/PublishMetadata/
 installer/SiteDirector.iss
 docs/PLAYER_README.md  → 分发「玩家说明.md」
+publish-mobile.ps1     → 兼容入口（等价 publish.ps1 -Apk）
 ```
 
 ## 打包流程
@@ -49,6 +50,8 @@ docs/PLAYER_README.md  → 分发「玩家说明.md」
 ```powershell
 .\publish.ps1
 .\publish.ps1 -Upload
+.\publish.ps1 -Apk
+.\publish.ps1 -Apk -Upload
 ```
 
 ## 输出
@@ -59,6 +62,8 @@ docs/PLAYER_README.md  → 分发「玩家说明.md」
 | `dist/…SiteDirector-v{版本}.zip` | 更新包 |
 | `dist/…-setup.exe` | 安装包 |
 | `dist/latest.json` | 更新清单 |
+| `dist/latest-android.json` | Android 清单（`-Apk`） |
+| `dist/Android/…v{版本}.apk` | Android 安装包（`-Apk`） |
 
 公共 URL：`https://sitedirector.cn-sy1.rains3.com/latest.json`
 
